@@ -1,19 +1,21 @@
-import Link, { LinkProps } from "@mui/material/Link";
-import LinkBehavior from "../LinkBehavior";
+import LinkBehavior, { ILinkBehaviorProps } from "../LinkBehavior";
 
-type IMyLinkProps = Omit<LinkProps, "aria-label"> &
-  Required<Pick<LinkProps, "title" | "href" | "children">>;
+import { MyTypography, IMyTypographyProps } from "../MyTypography";
 
-function MyLink({ title, underline = "none", ...rest }: IMyLinkProps) {
+type IMyLinkProps = Omit<IMyTypographyProps, "aria-label"> &
+  Required<Pick<IMyTypographyProps, "title" | "children">> &
+  ILinkBehaviorProps;
+
+const MyLink = ({ title, ...rest }: IMyLinkProps) => {
   return (
-    <Link
+    <MyTypography
+      sx={{ textDecoration: "none" }}
       component={LinkBehavior}
       aria-label={title}
       title={title}
-      underline={underline}
       {...rest}
     />
   );
-}
+};
 
 export { MyLink };

@@ -14,14 +14,14 @@ type IMyMenuProps = Required<Pick<PopperProps, "anchorEl" | "open">> &
     children: ReactNode;
   };
 
-function MyMenu({
+const MyMenu = ({
   open,
   anchorEl,
   onClickAway,
   "aria-labelledby": ariaLabelledby,
   id,
   children,
-}: IMyMenuProps) {
+}: IMyMenuProps) => {
   return (
     <Popper
       open={open}
@@ -55,6 +55,6 @@ function MyMenu({
       )}
     </Popper>
   );
-}
+};
 
 export { MyMenu };

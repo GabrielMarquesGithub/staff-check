@@ -5,11 +5,11 @@ import {
 } from "react-router-dom";
 
 // Esse componente funciona como uma transição entre o router e o MUI
-type ILinkBehavior = Omit<RouterLinkProps, "to"> & {
+export type ILinkBehaviorProps = Omit<RouterLinkProps, "to"> & {
   href: RouterLinkProps["to"];
 };
 
-const LinkBehavior = forwardRef<HTMLAnchorElement, ILinkBehavior>(
+const LinkBehavior = forwardRef<HTMLAnchorElement, ILinkBehaviorProps>(
   (props, ref) => {
     const { href, ...rest } = props;
     return <RouterLink ref={ref} to={href} {...rest} />;
