@@ -19,7 +19,7 @@ function ErrorBoundary() {
 
   return (
     <Container sx={{ display: "inline" }}>
-      <MyLink aria-label="De volta a home" variant="h2" href="/">
+      <MyLink title="De volta a home" variant="h2" href="/">
         {text}
       </MyLink>
     </Container>

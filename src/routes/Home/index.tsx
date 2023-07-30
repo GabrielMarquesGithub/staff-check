@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { useTheme } from "@mui/material/styles";
 
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { useTheme } from "@mui/material/styles";
+import Tooltip from "@mui/material/Tooltip";
+
 import { MyButton } from "../../components/MyButton";
 
 function Home() {
@@ -23,16 +24,24 @@ function Home() {
         Valor do estado: {count}
       </Typography>
       <Container sx={{ display: "flex", gap: theme.spacing(20) }}>
-        <Button variant="contained" onClick={handleClick}>
-          Incrementar
-        </Button>
-        <MyButton
-          title="Ir para um rota invalida"
-          href="/teste"
-          variant="contained"
-        >
-          Ir para um rota invalida
-        </MyButton>
+        <Tooltip title="Ir para um rota invalida">
+          <MyButton
+            aria-label="Ir para um rota invalida"
+            variant="contained"
+            onClick={handleClick}
+          >
+            Incrementar
+          </MyButton>
+        </Tooltip>
+        <Tooltip title="Ir para um rota invalida">
+          <MyButton
+            aria-label="Ir para um rota invalida"
+            href="/teste"
+            variant="contained"
+          >
+            Ir para um rota invalida
+          </MyButton>
+        </Tooltip>
       </Container>
     </Container>
   );

@@ -1,13 +1,18 @@
-import { Link as RouterLink } from "react-router-dom";
-
 import Link, { LinkProps } from "@mui/material/Link";
+import LinkBehavior from "../LinkBehavior";
 
-type IMyLinkProps = LinkProps &
-  Required<Pick<LinkProps, "aria-label" | "href" | "children">>;
+type IMyLinkProps = Omit<LinkProps, "aria-label"> &
+  Required<Pick<LinkProps, "title" | "href" | "children">>;
 
-function MyLink({ href, underline = "none", ...rest }: IMyLinkProps) {
+function MyLink({ title, underline = "none", ...rest }: IMyLinkProps) {
   return (
-    <Link component={RouterLink} underline={underline} to={href} {...rest} />
+    <Link
+      component={LinkBehavior}
+      aria-label={title}
+      title={title}
+      underline={underline}
+      {...rest}
+    />
   );
 }
 
