@@ -4,7 +4,7 @@ import Button, { ButtonProps } from "@mui/material/Button";
 
 import LinkBehavior from "../LinkBehavior";
 
-type IMyButtonProps = Omit<ButtonProps, "component" | "LinkComponent"> &
+export type IMyButtonProps = Omit<ButtonProps, "component" | "LinkComponent"> &
   Required<Pick<ButtonProps, "children" | "aria-label">>;
 
 const MyButton = forwardRef<HTMLButtonElement, IMyButtonProps>(

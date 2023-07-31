@@ -30,3 +30,21 @@ declare module "@mui/material/styles" {
   // Alterando a tipagem de text
   interface TypeText extends IText {}
 }
+
+// Tipagem de estilos
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    h3: false;
+    h4: false;
+    h5: false;
+    h6: false;
+    fontWeightLight: false;
+    fontWeightMedium: false;
+    fontFamily: false;
+    fontSize: false;
+    htmlFontSize: false;
+    button: false;
+    overline: false;
+    caption: false;
+  }
+}

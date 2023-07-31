@@ -31,6 +31,7 @@ const typography: TypographyVariantsOptions = {
     lineHeight: spacing(16),
   },
   body1: { fontSize: spacing(16), lineHeight: spacing(16) },
+  button: { fontSize: spacing(16), fontWeight: 700 },
 };
 
 export default typography;
